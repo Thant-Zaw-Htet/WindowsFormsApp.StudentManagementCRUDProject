@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp.StudentManagementCRUDProject
 {
-    partial class Courses
+    partial class UpdateStudent
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFatherName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFee = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.comProgram = new System.Windows.Forms.ComboBox();
             this.radBtnPython = new System.Windows.Forms.RadioButton();
@@ -54,61 +52,32 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtFatherName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(31, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 18);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Student Name";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(34, 45);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(318, 42);
-            this.txtName.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Tomato;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(31, 102);
+            this.label1.Location = new System.Drawing.Point(398, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 18);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Father Name";
-            // 
-            // txtFatherName
-            // 
-            this.txtFatherName.Location = new System.Drawing.Point(34, 123);
-            this.txtFatherName.Multiline = true;
-            this.txtFatherName.Name = "txtFatherName";
-            this.txtFatherName.Size = new System.Drawing.Size(318, 42);
-            this.txtFatherName.TabIndex = 11;
+            this.label1.Size = new System.Drawing.Size(339, 28);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Update Student Registration";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tomato;
-            this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.txtPhoneNumber);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtFee);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnSubmit);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.comProgram);
             this.panel1.Controls.Add(this.radBtnPython);
@@ -126,13 +95,25 @@
             this.panel1.Controls.Add(this.txtAge);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtFatherName);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(362, 12);
+            this.panel1.Controls.Add(this.txtName);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Location = new System.Drawing.Point(12, 137);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1043, 438);
-            this.panel1.TabIndex = 12;
+            this.panel1.Size = new System.Drawing.Size(1043, 441);
+            this.panel1.TabIndex = 13;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Tomato;
+            this.btnBack.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.Location = new System.Drawing.Point(583, 647);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(154, 54);
+            this.btnBack.TabIndex = 33;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
             // 
             // txtPhoneNumber
             // 
@@ -156,7 +137,7 @@
             // 
             // txtFee
             // 
-            this.txtFee.Location = new System.Drawing.Point(798, 288);
+            this.txtFee.Location = new System.Drawing.Point(782, 280);
             this.txtFee.Multiline = true;
             this.txtFee.Name = "txtFee";
             this.txtFee.Size = new System.Drawing.Size(191, 42);
@@ -168,24 +149,23 @@
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label7.Location = new System.Drawing.Point(871, 258);
+            this.label7.Location = new System.Drawing.Point(855, 250);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 18);
             this.label7.TabIndex = 29;
             this.label7.Text = "Fee";
             // 
-            // btnSubmit
+            // btnUpdate
             // 
-            this.btnSubmit.BackColor = System.Drawing.Color.Tomato;
-            this.btnSubmit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSubmit.Location = new System.Drawing.Point(798, 361);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(88, 54);
-            this.btnSubmit.TabIndex = 28;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnUpdate.BackColor = System.Drawing.Color.Tomato;
+            this.btnUpdate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpdate.Location = new System.Drawing.Point(381, 647);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(154, 54);
+            this.btnUpdate.TabIndex = 28;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -193,7 +173,7 @@
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Location = new System.Drawing.Point(473, 258);
+            this.label6.Location = new System.Drawing.Point(479, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 18);
             this.label6.TabIndex = 27;
@@ -206,7 +186,7 @@
             "Normal",
             "By One",
             "Trainning"});
-            this.comProgram.Location = new System.Drawing.Point(416, 294);
+            this.comProgram.Location = new System.Drawing.Point(422, 294);
             this.comProgram.Name = "comProgram";
             this.comProgram.Size = new System.Drawing.Size(200, 28);
             this.comProgram.TabIndex = 26;
@@ -362,79 +342,93 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Age";
             // 
-            // dgv1
+            // txtFatherName
             // 
-            this.dgv1.AllowUserToAddRows = false;
-            this.dgv1.AllowUserToDeleteRows = false;
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(56, 468);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.ReadOnly = true;
-            this.dgv1.RowHeadersWidth = 62;
-            this.dgv1.RowTemplate.Height = 28;
-            this.dgv1.Size = new System.Drawing.Size(1603, 370);
-            this.dgv1.TabIndex = 13;
+            this.txtFatherName.Location = new System.Drawing.Point(34, 123);
+            this.txtFatherName.Multiline = true;
+            this.txtFatherName.Name = "txtFatherName";
+            this.txtFatherName.Size = new System.Drawing.Size(318, 42);
+            this.txtFatherName.TabIndex = 11;
             // 
-            // btnRefresh
+            // label2
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.Tomato;
-            this.btnRefresh.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRefresh.Location = new System.Drawing.Point(901, 361);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(88, 54);
-            this.btnRefresh.TabIndex = 33;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Location = new System.Drawing.Point(31, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Father Name";
             // 
-            // Courses
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(34, 45);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(318, 42);
+            this.txtName.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Location = new System.Drawing.Point(31, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 18);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Student Name";
+            // 
+            // UpdateStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1671, 850);
-            this.Controls.Add(this.dgv1);
+            this.ClientSize = new System.Drawing.Size(1063, 803);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
-            this.Name = "Courses";
-            this.Text = "Courses";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Courses_FormClosed);
-            this.Load += new System.EventHandler(this.Courses_Load);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnUpdate);
+            this.Name = "UpdateStudent";
+            this.Text = "UpdateStudent";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFatherName;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtAge;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radBtnWeb;
-        private System.Windows.Forms.RadioButton radBtnJava;
-        private System.Windows.Forms.RadioButton radBtnCsharp;
-        private System.Windows.Forms.RadioButton radBtnPhp;
-        private System.Windows.Forms.RadioButton radBtnAndroid;
-        private System.Windows.Forms.RadioButton radBtnIos;
-        private System.Windows.Forms.RadioButton radBtnReact;
-        private System.Windows.Forms.RadioButton radBtnPython;
-        private System.Windows.Forms.RadioButton radBtnFlutter;
-        private System.Windows.Forms.ComboBox comProgram;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtFee;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.TextBox txtFee;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comProgram;
+        private System.Windows.Forms.RadioButton radBtnPython;
+        private System.Windows.Forms.RadioButton radBtnFlutter;
+        private System.Windows.Forms.RadioButton radBtnReact;
+        private System.Windows.Forms.RadioButton radBtnIos;
+        private System.Windows.Forms.RadioButton radBtnAndroid;
+        private System.Windows.Forms.RadioButton radBtnCsharp;
+        private System.Windows.Forms.RadioButton radBtnPhp;
+        private System.Windows.Forms.RadioButton radBtnJava;
+        private System.Windows.Forms.RadioButton radBtnWeb;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFatherName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label9;
     }
 }
