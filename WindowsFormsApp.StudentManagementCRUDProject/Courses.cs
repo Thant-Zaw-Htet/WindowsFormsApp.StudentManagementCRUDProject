@@ -51,10 +51,10 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 }
                 SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
                 conn.Open();
-                string query = @"INSERT INTO CourseRegistration (Studentname,Fathername,Age,Email,PhoneNumber,Courses,Program,Fee) VALUES (@Studentname,@Fathername,@Age,@Email,@PhoneNumber,@Courses,@Program,@Fee)";
+                string query = @"INSERT INTO CourseRegistration (StudentName,FatherName,Age,Email,PhoneNumber,Courses,Program,Fee) VALUES (@StudentName,@FatherName,@Age,@Email,@PhoneNumber,@Courses,@Program,@Fee)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Studentname",name);
-                cmd.Parameters.AddWithValue("@Fathername", fatherName);
+                cmd.Parameters.AddWithValue("@StudentName",name);
+                cmd.Parameters.AddWithValue("@FatherName", fatherName);
                 cmd.Parameters.AddWithValue("@Age", age);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
@@ -135,8 +135,8 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
                 conn.Open();
                 string query = @"SELECT [StudentID]
-      ,[Studentname]
-      ,[Fathername]
+      ,[StudentName]
+      ,[FatherName]
       ,[Age]
       ,[Email]
       ,[PhoneNumber]
@@ -156,6 +156,46 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    int id = Convert.ToInt32(dgv1.Rows[e.RowIndex].Cells[2].Value);
+                    string studentName = Convert.ToString(dgv1.Rows[e.RowIndex].Cells[3].Value);
+                    string fatherName = Convert.ToString(dgv1.Rows[e.RowIndex].Cells[4].Value);
+                    int age = Convert.ToInt32(dgv1.Rows[e.RowIndex].Cells[5].Value);
+                    string email = Convert.ToString(dgv1.Rows[e.RowIndex ].Cells[6].Value);
+                    string phoneNumber = Convert.ToString(dgv1.Rows[e.RowIndex].Cells[7].Value);
+                    string courses = Convert.ToString(dgv1.Rows[e.RowIndex].Cells[8].Value);
+                    string program = Convert.ToString(dgv1.Rows[e.RowIndex].Cells[9].Value);
+                    int fee = Convert.ToInt32(dgv1.Rows[e.RowIndex].Cells[10].Value);
+
+
+                    var model = new CourseModel
+                    {
+                        StudentID = id,
+                        StudentName = studentName,
+                        FatherName = fatherName,
+                        Age = age,
+                        Email = email,
+                        PhoneNumber = phoneNumber,
+                        Courses = courses,
+                        Program = program,
+                        Fee = fee
+                    };
+                    UpdateStudent updateStudent = new UpdateStudent(model);
+                    updateStudent.Show();
+                    this.Hide();
+                }
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception (ex.Message);
             }
         }
     }

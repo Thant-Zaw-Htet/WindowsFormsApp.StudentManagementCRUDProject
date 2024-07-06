@@ -114,6 +114,7 @@
             this.btnBack.TabIndex = 33;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtPhoneNumber
             // 
@@ -393,6 +394,8 @@
             this.Controls.Add(this.btnUpdate);
             this.Name = "UpdateStudent";
             this.Text = "UpdateStudent";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UpdateStudent_FormClosed);
+            this.Load += new System.EventHandler(this.UpdateStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="CourseModel.cs" />
     <Compile Include="Courses.cs">
       <SubType>Form</SubType>
     </Compile>
