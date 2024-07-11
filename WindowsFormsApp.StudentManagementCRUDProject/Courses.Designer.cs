@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtFatherName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtFee = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +134,19 @@
             this.panel1.Size = new System.Drawing.Size(1043, 438);
             this.panel1.TabIndex = 12;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Tomato;
+            this.btnRefresh.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefresh.Location = new System.Drawing.Point(901, 361);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(88, 54);
+            this.btnRefresh.TabIndex = 33;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Location = new System.Drawing.Point(34, 361);
@@ -205,7 +218,7 @@
             this.comProgram.Items.AddRange(new object[] {
             "Normal",
             "By One",
-            "Trainning"});
+            "Training"});
             this.comProgram.Location = new System.Drawing.Point(416, 294);
             this.comProgram.Name = "comProgram";
             this.comProgram.Size = new System.Drawing.Size(200, 28);
@@ -372,28 +385,15 @@
             this.dgv1.ReadOnly = true;
             this.dgv1.RowHeadersWidth = 62;
             this.dgv1.RowTemplate.Height = 28;
-            this.dgv1.Size = new System.Drawing.Size(1647, 370);
+            this.dgv1.Size = new System.Drawing.Size(1814, 370);
             this.dgv1.TabIndex = 13;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.Tomato;
-            this.btnRefresh.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRefresh.Location = new System.Drawing.Point(901, 361);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(88, 54);
-            this.btnRefresh.TabIndex = 33;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Courses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1671, 850);
+            this.ClientSize = new System.Drawing.Size(1838, 850);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.panel1);
             this.Name = "Courses";
