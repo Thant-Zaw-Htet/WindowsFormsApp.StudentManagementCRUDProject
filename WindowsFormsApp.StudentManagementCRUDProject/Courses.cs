@@ -37,22 +37,22 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 if (name.IsNullOrEmpty()|| fatherName.IsNullOrEmpty() || email.IsNullOrEmpty() || phoneNumber.IsNullOrEmpty() || courses.IsNullOrEmpty() || program.IsNullOrEmpty())
 
                 {
-                    MessageBox.Show("Please fill out all fields.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(MessageResource.FillData, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!int.TryParse(txtAge.Text.Trim(), out age) || age <= 0)
                 {
-                    MessageBox.Show("Please enter a valid age.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(MessageResource.ValidAge, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!decimal.TryParse(txtFee.Text.Trim(), out fee) || fee <= 0)
                 {
-                    MessageBox.Show("Please enter a valid fee.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(MessageResource.ValidFee, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
                 conn.Open();
-                string query = @"INSERT INTO CourseRegistration (StudentName,FatherName,Age,Email,PhoneNumber,Courses,Program,Fee) VALUES (@StudentName,@FatherName,@Age,@Email,@PhoneNumber,@Courses,@Program,@Fee)";
+                string query = Query.GetInsertBlogQuery;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@StudentName",name);
                 cmd.Parameters.AddWithValue("@FatherName", fatherName);
@@ -68,10 +68,10 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Create Student Successful!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(MessageResource.CreateStudentSuccess, "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                MessageBox.Show("Create student Fail", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(MessageResource.CreateStudentFail, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
             }
         
@@ -193,7 +193,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                     DialogResult dialogResult = MessageBox.Show("Are you Sure to delete?", "Confirmation!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.OK)
                     {
-                        string query = @"DELETE FROM CourseRegistration WHERE StudentID = @StudentID";
+                        string query = Query.GetDeleteBlogQuery;
                         SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
                         await conn.OpenAsync();
                         SqlCommand cmd = new SqlCommand(query, conn);
@@ -203,7 +203,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                         if (result > 0) 
                         {
                             MessageBox.Show("Delete Student Successful!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            await FetchData();
+                            FetchData();
                             return;
                         }
                         MessageBox.Show("Delete Student Fail", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -285,22 +285,13 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
             if (radBtnPython.Checked) return "Python";
             return string.Empty;
         }
-        private async Task FetchData()
+        private void FetchData()
         {
             try
             {
                 SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
-                await conn.OpenAsync();
-                string query = @"SELECT [StudentID]
-      ,[StudentName]
-      ,[FatherName]
-      ,[Age]
-      ,[Email]
-      ,[PhoneNumber]
-      ,[Courses]
-      ,[Program]
-      ,[Fee]
-  FROM [users].[dbo].[CourseRegistration] ";
+                conn.Open();
+                string query = Query.GetAllBlogQuery;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

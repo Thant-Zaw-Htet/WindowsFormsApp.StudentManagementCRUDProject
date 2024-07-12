@@ -98,7 +98,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                     MessageBox.Show("Please enter a valid fee.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                string query = @"UPDATE CourseRegistration SET StudentName = @StudentName, FatherName = @FatherName, Age = @Age, Email = @Email, PhoneNumber = @PhoneNumber, Courses = @Courses, Program = @Program, Fee = @Fee WHERE StudentId = @StudentId";          
+                string query = Query.GetUpdateBlogQuery;     
                 SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
                 conn.Open();
 
