@@ -190,7 +190,8 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
 
                 if(e.ColumnIndex == 1)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Are you Sure to delete?", "Confirmation!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                    DialogResult dialogResult = MessageBox.Show(MessageResource.DeleteConfirm, "Confirmation!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
                     if (dialogResult == DialogResult.OK)
                     {
                         string query = Query.GetDeleteBlogQuery;
@@ -202,11 +203,11 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
 
                         if (result > 0) 
                         {
-                            MessageBox.Show("Delete Student Successful!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(MessageResource.DeleteSuccess, "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             FetchData();
                             return;
                         }
-                        MessageBox.Show("Delete Student Fail", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(MessageResource.DeleteFail, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         conn.Close();
                     }

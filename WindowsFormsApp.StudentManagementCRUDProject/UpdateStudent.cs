@@ -85,17 +85,17 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 if (name.IsNullOrEmpty() || fatherName.IsNullOrEmpty() ||email.IsNullOrEmpty() || phoneNumber.IsNullOrEmpty() || courses.IsNullOrEmpty() || program.IsNullOrEmpty())
 
                 {
-                    MessageBox.Show("Please fill out all fields.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(MessageResource.FillData, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!int.TryParse(txtAge.Text.Trim(), out age) || age <= 0)
                 {
-                    MessageBox.Show("Please enter a valid age.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(MessageResource.ValidAge, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (!decimal.TryParse(txtFee.Text.Trim(), out fee) || fee <= 0)
                 {
-                    MessageBox.Show("Please enter a valid fee.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(MessageResource.ValidFee, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 string query = Query.GetUpdateBlogQuery;     
@@ -119,10 +119,10 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Update Student Successful!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(MessageResource.UpdateSuccess, "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                MessageBox.Show("Update Student Fail", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(MessageResource.UpdateFail, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex) 
             { 
