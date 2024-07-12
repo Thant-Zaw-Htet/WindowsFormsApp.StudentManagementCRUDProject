@@ -34,7 +34,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 string program = comProgram.Text.Trim();
                 decimal fee;
 
-                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(fatherName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(courses) || string.IsNullOrEmpty(program))
+                if (name.IsNullOrEmpty()|| fatherName.IsNullOrEmpty() || email.IsNullOrEmpty() || phoneNumber.IsNullOrEmpty() || courses.IsNullOrEmpty() || program.IsNullOrEmpty())
 
                 {
                     MessageBox.Show("Please fill out all fields.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -153,7 +153,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
             }
         }
 
-        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -195,7 +195,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                     {
                         string query = @"DELETE FROM CourseRegistration WHERE StudentID = @StudentID";
                         SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
-                        conn.Open();
+                        await conn.OpenAsync();
                         SqlCommand cmd = new SqlCommand(query, conn);
                         cmd.Parameters.AddWithValue("@StudentID", id);
                         int result = cmd.ExecuteNonQuery();
@@ -203,7 +203,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                         if (result > 0) 
                         {
                             MessageBox.Show("Delete Student Successful!", "Information!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            FetchData();
+                            await FetchData();
                             return;
                         }
                         MessageBox.Show("Delete Student Fail", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -285,12 +285,12 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
             if (radBtnPython.Checked) return "Python";
             return string.Empty;
         }
-        private void FetchData()
+        private async Task FetchData()
         {
             try
             {
                 SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
-                conn.Open();
+                await conn.OpenAsync();
                 string query = @"SELECT [StudentID]
       ,[StudentName]
       ,[FatherName]
@@ -306,7 +306,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                conn.Close();
+              conn.Close();
 
                 dgv1.DataSource = dt;
             }

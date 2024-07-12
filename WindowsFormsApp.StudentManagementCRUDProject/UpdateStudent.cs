@@ -82,7 +82,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 string program = comProgram.Text.Trim();
                 decimal fee;
 
-                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(fatherName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(courses) || string.IsNullOrEmpty(program))
+                if (name.IsNullOrEmpty() || fatherName.IsNullOrEmpty() ||email.IsNullOrEmpty() || phoneNumber.IsNullOrEmpty() || courses.IsNullOrEmpty() || program.IsNullOrEmpty())
 
                 {
                     MessageBox.Show("Please fill out all fields.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -100,7 +100,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 }
                 string query = @"UPDATE CourseRegistration SET StudentName = @StudentName, FatherName = @FatherName, Age = @Age, Email = @Email, PhoneNumber = @PhoneNumber, Courses = @Courses, Program = @Program, Fee = @Fee WHERE StudentId = @StudentId";          
                 SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
-                conn.OpenAsync();
+                conn.Open();
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@StudentName", name);
