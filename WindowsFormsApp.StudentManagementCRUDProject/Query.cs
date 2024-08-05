@@ -8,6 +8,12 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
 {
     public class Query
     {
+        public static string GetCreateBlogQuery { get; } =
+            @"INSERT INTO UserRegistration(Username,Email,Password,Phonenumber) VALUES(@Username,@Email,@Password,@Phonenumber)";
+
+        public static string GetSelectBlogQuery { get; } =
+            @"SELECT * FROM UserRegistration WHERE email = @email and password = @password";
+
         public static string GetAllBlogQuery { get; } =
             @"SELECT [StudentID]
       ,[StudentName]

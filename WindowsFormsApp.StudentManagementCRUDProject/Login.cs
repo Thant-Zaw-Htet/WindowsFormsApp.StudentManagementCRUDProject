@@ -34,7 +34,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
 
                 SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
                 conn.Open();
-                string query = @"SELECT * FROM UserRegistration WHERE email = @email and password = @password";
+                string query = Query.GetSelectBlogQuery;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("email", username);
                 cmd.Parameters.AddWithValue("password", password);

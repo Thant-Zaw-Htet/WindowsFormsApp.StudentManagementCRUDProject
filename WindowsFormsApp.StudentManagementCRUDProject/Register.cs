@@ -42,7 +42,7 @@ namespace WindowsFormsApp.StudentManagementCRUDProject
                 {
                     SqlConnection conn = new SqlConnection(ConnectionString.getConnection);
                     conn.Open();
-                    string query = @"INSERT INTO UserRegistration(Username,Email,Password,Phonenumber) VALUES(@Username,@Email,@Password,@Phonenumber)";
+                    string query = Query.GetCreateBlogQuery;
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Username", name);
                     cmd.Parameters.AddWithValue("@Email", email);
